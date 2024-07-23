@@ -1,5 +1,6 @@
+import flet as ft
 def desk_view(page):
-    load_visitor_table(vb_table1)
+    #load_visitor_table(vb_table1)
     print("Adding Desk view")
     
     page.views.append(
@@ -7,9 +8,9 @@ def desk_view(page):
             "/visitor_book",
             [
                  ft.AppBar(title=ft.Text("FIMS Management System"), bgcolor=ft.colors.BLUE_900,color='white'),
-                 vb_box1,vb_table
+                 #vb_box1,vb_table
             ],
-            drawer=navbar,
+            #drawer=navbar,
             padding=10,bgcolor='white',horizontal_alignment='center',scroll=True
         )
     )
