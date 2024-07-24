@@ -24,6 +24,7 @@ def Login(name, father_name, cls, page):
         VALUES (%s, %s, %s)
     """, (name.value, father_name.value, cls.value))
     conn.commit()
+    #izza
     cur.execute("SELECT* FROM USERS")
     data=cur.fetchall()
     for x in data:
