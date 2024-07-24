@@ -7,7 +7,7 @@ def route_change(route_event, page):
     route = route_event.route
     print("Route change:", route)
     if route == "/":
-        print("Hello")
+        print("Fiirst page")
         register(page)
     
     

@@ -1,18 +1,28 @@
+# views.py
+
 import flet as ft
-def desk_view(page):
-    #load_visitor_table(vb_table1)
-    print("Adding Desk view")
+from widget import (box)
+from time import sleep
+
+
+def register(page):
+    print("Adding Income view")
     
     page.views.append(
         ft.View(
-            "/visitor_book",
-            [
+            "/register",
+            [    
                  ft.AppBar(title=ft.Text("FIMS Management System"), bgcolor=ft.colors.BLUE_900,color='white'),
-                 #vb_box1,vb_table
+                 ft.Container(height=20),
+                 ft.Text(value="Enter Fee Details",color='black',size=18),
+                 box
+                 
+                 
             ],
             #drawer=navbar,
-            padding=10,bgcolor='white',horizontal_alignment='center',scroll=True
+            padding=40,bgcolor='white',horizontal_alignment='center',scroll=True,
         )
     )
+    
     page.update()
     return page.views
