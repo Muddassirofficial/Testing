@@ -1,18 +1,27 @@
-import flet as ft
-def desk_view(page):
-    #load_visitor_table(vb_table1)
-    print("Adding Desk view")
-    
-    page.views.append(
-        ft.View(
-            "/visitor_book",
-            [
-                 ft.AppBar(title=ft.Text("FIMS Management System"), bgcolor=ft.colors.BLUE_900,color='white'),
-                 #vb_box1,vb_table
-            ],
-            #drawer=navbar,
-            padding=10,bgcolor='white',horizontal_alignment='center',scroll=True
-        )
+import pymysql
+
+def Login(name, father_name, cls, page):
+    conn = pymysql.connect(
+        host='srv865.hstgr.io',
+        user='u441049818_SDP',
+        password='Flexwave@193708',
+        database='u441049818_SDP'
     )
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS USERS (
+            ID INT AUTO_INCREMENT PRIMARY KEY,
+            NAME VARCHAR(256),
+            F_NAME VARCHAR(256),
+            Class VARCHAR(256)
+        )
+    """)
+    conn.commit()
+    cur.execute("""
+        INSERT INTO USERS (NAME, F_NAME, Class)
+        VALUES (%s, %s, %s)
+    """, (name.value, father_name.value, cls.value))
+    conn.commit()
+    conn.close()
+    page.go("/DATABASE")
     page.update()
-    return page.views
