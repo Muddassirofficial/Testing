@@ -2,7 +2,7 @@ import flet as ft
 from view import (register)
 
 from widget import set_global_page
-
+#changes
 def route_change(route_event, page):
     route = route_event.route
     print("Route change:", route)
