@@ -6,7 +6,8 @@ config = {
     'password': 'Flexwave@193708',
     'database': 'u441049818_SDP',
 }
-#login function
+
+#login function by maryam
 def Login(name, father_name, cls, page):
     conn = pymysql.connect(**config)
     cur = conn.cursor()
